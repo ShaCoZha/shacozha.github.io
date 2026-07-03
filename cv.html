@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jiawei Zhang</title>
+  <title>CV | Jiawei Zhang</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="theme.js"></script>
 </head>
@@ -11,9 +11,9 @@
   <header class="site-header">
     <a class="site-name" href="index.html">Jiawei Zhang</a>
     <nav class="site-nav" aria-label="Primary navigation">
-      <a class="active" href="index.html">Home</a>
+      <a href="index.html">Home</a>
       <span aria-hidden="true">|</span>
-      <a href="cv.html">CV</a>
+      <a class="active" href="cv.html">CV</a>
       <span aria-hidden="true">|</span>
       <a href="projects.html">Projects</a>
       <span aria-hidden="true">|</span>
@@ -23,19 +23,13 @@
     </nav>
   </header>
 
-  <main class="home-layout">
-    <img
-      class="portrait"
-      src="jiawei.jpg"
-      width="360"
-      height="360"
-      alt="Jiawei Zhang"
-    />
-
-    <p class="intro">
-      I am Jiawei Zhang, interested in computer science, human-centered machine
-      learning, wearable sensing, XR interaction, and motion understanding. This
-      site collects my CV, projects, background, and contact information.
+  <main class="page-main cv-main">
+    <h1 class="page-title">Jiawei Zhang CV</h1>
+    <section class="cv-viewer" aria-label="CV document">
+      <iframe class="cv-frame" src="resume.pdf" title="Jiawei Zhang CV"></iframe>
+    </section>
+    <p class="cv-note">
+      <a class="redirect-link" href="resume.pdf" target="_blank" rel="noopener">Open CV in a new tab</a>
     </p>
   </main>
 </body>
