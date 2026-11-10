@@ -2,7 +2,7 @@
 
 :root {
   --text: #262626;
-  --intro-text: #808080;
+  --intro-text: #4a4a4a;
   --muted: #737373;
   --line: #e5e5e5;
   --link: #404040;
@@ -150,9 +150,9 @@ a:focus {
   margin: 0;
   max-width: 940px;
   color: var(--intro-text);
-  font-size: clamp(1.06rem, 0.98rem + 0.32vw, 1.28rem);
+  font-size: clamp(1rem, 0.94rem + 0.26vw, 1.16rem);
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.45;
   text-align: justify;
   text-align-last: left;
   transition: color 360ms ease;
