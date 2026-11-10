@@ -2,6 +2,7 @@
 
 :root {
   --text: #262626;
+  --intro-text: #808080;
   --muted: #737373;
   --line: #e5e5e5;
   --link: #404040;
@@ -12,6 +13,7 @@
   --button-text: #262626;
   --button-shadow: rgba(0, 0, 0, 0.10);
   --content-width: 1280px;
+  --profile-width: 1120px;
   --content-padding: 48px;
   --inner-width: calc(var(--content-width) - 2 * var(--content-padding));
   --header-height: 100px;
@@ -20,6 +22,7 @@
 
 :root[data-theme="dark"] {
   --text: #e5e5e5;
+  --intro-text: #b3b3b3;
   --muted: #a3a3a3;
   --line: #333333;
   --link: #d4d4d4;
@@ -66,7 +69,7 @@ a:focus {
 }
 
 .site-header {
-  width: min(100%, 1200px);
+  width: min(100%, var(--profile-width));
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -112,7 +115,7 @@ a:focus {
 }
 
 .home-layout {
-  width: min(100%, 1120px);
+  width: min(100%, var(--profile-width));
   margin: 0 auto;
   padding: 24px var(--content-padding) 40px;
   display: grid;
@@ -120,35 +123,62 @@ a:focus {
   align-items: center;
   align-content: center;
   justify-content: center;
-  gap: 48px;
+  gap: clamp(56px, calc(100% - 240px - 648px), 136px);
 }
 
 .portrait {
+  position: relative;
   width: 100%;
   max-width: 240px;
-  height: auto;
   aspect-ratio: 1;
-  object-fit: cover;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 50%;
   transition: border-color 360ms ease;
 }
 
+.portrait-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.22);
+}
+
 .intro {
   margin: 0;
   max-width: 940px;
+  color: var(--intro-text);
   font-size: clamp(1.06rem, 0.98rem + 0.32vw, 1.28rem);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.55;
   text-align: justify;
   text-align-last: left;
   transition: color 360ms ease;
 }
 
+.intro strong {
+  font-weight: 500;
+}
+
+.intro a {
+  color: inherit;
+}
+
+.intro a:hover,
+.intro a:focus {
+  color: var(--link-hover);
+}
+
 .projects-section {
-  width: min(100%, var(--content-width));
+  width: min(100%, var(--profile-width));
   margin: 0 auto;
   padding: 16px var(--content-padding) 64px;
+}
+
+.projects-section .section-title {
+  font-size: clamp(1.5rem, 1.3rem + 0.5vw, 1.8rem);
 }
 
 .section-title {
@@ -372,7 +402,7 @@ a:focus {
 
   .home-layout {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 36px;
     padding: 16px 24px 32px;
     text-align: center;
   }
